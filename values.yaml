@@ -5,13 +5,35 @@
 replicaCount: 1
 
 image:
-  repository: servercentral/praeco
+  repository: praecoapp/praeco
   tag: latest
   pullPolicy: IfNotPresent
 
 imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
+
+elastalert-server:
+  # Refer to:
+  # https://github.com/operatorequals/elastalert-helm/blob/master/values.yaml
+  image:
+    repository: praecoapp/elastalert-server
+    tag: latest
+  elasticsearch: 
+    host: ""
+    port: 9200
+    useSsl: true
+    verifyCerts: false
+    caCerts: ""
+    # caCerts: "/certs/ca.crt"
+    username: "elastic"
+    password: ""
+
+
+praeco:
+  schema: http
+  external_host: praeco
+  port: 8080
 
 serviceAccount:
   # Specifies whether a service account should be created
@@ -67,7 +89,3 @@ tolerations: []
 
 affinity: {}
 
-praeco:
-  schema: http
-  external_host: praeco
-  port: 8080
