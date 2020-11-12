@@ -35,7 +35,9 @@ Session.vim
 *.tgz
 # Chart dependencies
 **/charts/*.tgz
+*.lock
 
 .history
 
 vars.yml
+
