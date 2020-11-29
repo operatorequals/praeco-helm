@@ -1,5 +1,4 @@
 dependencies:
   - name: elastalert-server
     version: 0.4.1
-    # repository: https://daichi703n.github.io/charts/stable
-    repository: file://..//elastalert-server # for testing
+    repository: https://operatorequals.github.io/helm-chart
